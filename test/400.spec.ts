@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { re400 } from '../src/main'
 
 describe('400 Phone', () => {
-  const positives = [
+  const goods = [
     '4001-333-333',
     '400-16-56789',
     '400-16-98765',
@@ -51,21 +51,21 @@ describe('400 Phone', () => {
     '400-158-5666',
     '400-198-5666'
   ]
-  const counters = [
+  const bads = [
     '4001-333-3333',
     '400-22-333',
     '4003-22-333',
     '4003-22-33-443'
   ]
 
-  describe('Positive example', () => {
-    positives.forEach((item) => {
-      it(`money: ${item}`, () => expect(re400.test(item)).toBeTruthy())
+  describe('Good example', () => {
+    goods.forEach((item) => {
+      it(`400 Phone: ${item}`, () => expect(re400.test(item)).toBeTruthy())
     })
   })
-  describe('Counter example', () => {
-    counters.forEach((item) => {
-      it(`money: ${item}`, () => expect(re400.test(item)).toBeFalsy())
+  describe('Bad example', () => {
+    bads.forEach((item) => {
+      it(`400 Phone: ${item}`, () => expect(re400.test(item)).toBeFalsy())
     })
   })
 })
