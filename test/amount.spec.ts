@@ -1,18 +1,18 @@
 import { describe, expect, it } from 'vitest'
-import { reMoney } from '../src/main'
+import { reAmount } from '../src/main'
 
-describe('Money', () => {
+describe('Amount', () => {
   const goods = ['1', '123', '123.12', '0.12']
   const bads = ['0123', '123.', '.12', '00.12', '000.12']
 
   describe('Good example', () => {
     goods.forEach((item) => {
-      it(`money: ${item}`, () => expect(reMoney.test(item)).toBeTruthy())
+      it(`amount: ${item}`, () => expect(reAmount.test(item)).toBeTruthy())
     })
   })
   describe('Bad example', () => {
     bads.forEach((item) => {
-      it(`money: ${item}`, () => expect(reMoney.test(item)).toBeFalsy())
+      it(`amount: ${item}`, () => expect(reAmount.test(item)).toBeFalsy())
     })
   })
 })
